@@ -1,4 +1,5 @@
 import React from 'react';
+import ListaProdutos from './ListaProdutos';
 
 class PaginaPrincipal extends React.Component {
 
@@ -15,6 +16,7 @@ class PaginaPrincipal extends React.Component {
                <>
                     <h1 style={{ backgroundColor: this.cor }}>Bem vindo</h1>
                     <hr/>
+                    <ListaProdutos/>
                </>
         );
     }
