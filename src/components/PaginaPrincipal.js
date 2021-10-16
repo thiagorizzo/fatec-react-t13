@@ -1,7 +1,12 @@
 import React from 'react';
-import ListaProdutos from './ListaProdutos';
+import ListaProdutosFuncao from './ListaProdutosFuncao';
+import ProdutoDetalhe from './ProdutoDetalhe';
 
 class PaginaPrincipal extends React.Component {
+
+    state = {
+        produtoSelecionado: undefined
+    }
 
     cor = "blue";
 
@@ -11,12 +16,17 @@ class PaginaPrincipal extends React.Component {
         this.cor = props.cor;
     }
 
+    onProdutoSelecionado = (produto) => {
+        this.setState({ produtoSelecionado: produto})
+    }
+
     render() {
         return (
                <>
                     <h1 style={{ backgroundColor: this.cor }}>Bem vindo</h1>
                     <hr/>
-                    <ListaProdutos/>
+                    <ListaProdutosFuncao onProdutoSelecionado={this.onProdutoSelecionado} />
+                    <ProdutoDetalhe produto={this.state.produtoSelecionado}/>
                </>
         );
     }
