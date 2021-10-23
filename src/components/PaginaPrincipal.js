@@ -1,6 +1,5 @@
 import React from 'react';
-import ListaProdutosFuncao from './ListaProdutosFuncao';
-import ProdutoDetalhe from './ProdutoDetalhe';
+import ProdutoCadastro from './Produto/ProdutoCadastro';
 
 class PaginaPrincipal extends React.Component {
 
@@ -25,8 +24,7 @@ class PaginaPrincipal extends React.Component {
                <>
                     <h1 style={{ backgroundColor: this.cor }}>Bem vindo</h1>
                     <hr/>
-                    <ListaProdutosFuncao onProdutoSelecionado={this.onProdutoSelecionado} />
-                    <ProdutoDetalhe produto={this.state.produtoSelecionado}/>
+                    <ProdutoCadastro/>
                </>
         );
     }
